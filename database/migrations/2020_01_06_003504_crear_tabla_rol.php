@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Validation\Rules\Unique;
 
 class CrearTablaRol extends Migration
 {
@@ -15,7 +16,7 @@ class CrearTablaRol extends Migration
     {
         Schema::create('rol', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
+            $table->string('nombre',50)->Unique();
             $table->timestamps();
         });
     }
